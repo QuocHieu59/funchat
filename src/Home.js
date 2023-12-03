@@ -97,6 +97,9 @@ const Home = () => {
     e.preventDefault();
     history.push(`/room/${RoomCode}`);
   };
+  const goBack = () => {
+    history.push('/'); // Chuyển hướng
+  };
 
   return (
     <div className="relative h-screen">
@@ -119,6 +122,7 @@ const Home = () => {
               onChange={(e) => setRoomCode(e.target.value)}
             />
             <GoButton type="submit">Đi</GoButton>
+            <GoButton onClick={goBack}>Quay lại</GoButton>
           </FormContainer>
         </HeroContent>
       </HeroContainer>

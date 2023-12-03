@@ -8,7 +8,6 @@ import { AppContext } from '../../Context/AppProvider';
 import { addDocument } from '../../firebase/services';
 import { AuthContext } from '../../Context/AuthProvider';
 import useFirestore from '../../hooks/useFirestore';
-import { useHistory } from 'react-router-dom';
 
 
 const HeaderStyled = styled.div`
@@ -119,10 +118,6 @@ export default function ChatWindow() {
     }),
     [selectedRoom.id]
   );
-  const history = useHistory();
-  const goToLobby = () => {
-    history.push('/home'); // Chuyển hướng đến '/lobby'
-  };
   const messages = useFirestore('messages', condition);
 
   useEffect(() => {
